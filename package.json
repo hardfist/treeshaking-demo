@@ -1,0 +1,30 @@
+{
+  "name": "treeshaking-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:rollup": "rollup src/index.js --format=iife --file=dist/rollup.js",
+    "build:webpack": "webpack -c webpack.config.js",
+    "build:esbuild": "esbuild src/index.js --bundle --format=iife --target=esnext --outfile=dist/esbuild.js",
+    "build:all": "npm run build:rollup && npm run build:webpack && npm run build:esbuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hardfist/treeshaking-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hardfist/treeshaking-demo/issues"
+  },
+  "homepage": "https://github.com/hardfist/treeshaking-demo#readme",
+  "dependencies": {
+    "esbuild": "^0.14.23",
+    "vue": "^3.2.31",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "sideEffects":false
+}
